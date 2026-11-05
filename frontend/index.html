@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dnyaneshwari Critical Edition Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="app">
+
+  <header id="topbar">
+    <div class="brand">
+      <span class="brand-title sans-text">ज्ञानेश्वरी</span>
+      <span class="brand-sub">Critical Edition Builder</span>
+    </div>
+
+    <div class="tb-group" id="chapterNav">
+      <button class="btn icon" id="prevCh" title="Previous chapter">‹</button>
+      <select id="chapterSel" title="Chapter"></select>
+      <button class="btn icon" id="nextCh" title="Next chapter">›</button>
+    </div>
+
+    <div class="tb-group">
+      <button class="btn primary" id="addEd">+ Add edition</button>
+      <button class="btn" id="demoEd" title="Create a perturbed copy of the first edition, to try out alignment">Demo variant</button>
+    </div>
+
+    <div class="tb-group">
+      <button class="btn" id="exportLinks">Export links</button>
+      <button class="btn" id="importLinks">Import links</button>
+    </div>
+
+    <span id="status" role="status"></span>
+    <button class="btn" id="togglePanel" title="Show / hide the details panel">Details</button>
+  </header>
+
+  <main id="workspace">
+    <div id="scroller">
+      <div id="stage">
+        <div id="heads"></div>
+        <div id="canvas">
+          <svg id="overlay" xmlns="http://www.w3.org/2000/svg">
+            <g id="gLinks"></g>
+            <g id="gHover"></g>
+            <g id="gDrag"></g>
+          </svg>
+        </div>
+      </div>
+      <div id="empty">
+        <h2>No editions loaded</h2>
+        <p class="intro-text">Each edition becomes one chain of blocks. Load two or more, then drag from the edge of a block in one chain to a block (or the gap between blocks) in another to map them.</p>
+        <p class="center-text">
+          <button class="btn primary big" id="emptyAdd">Choose edition JSON file(s)…</button>
+        </p>
+        <p class="center-text small muted">…or drop <code>.json</code> files anywhere on this page.</p>
+      </div>
+    </div>
+    <aside id="panel"></aside>
+  </main>
+
+  <input type="file" id="fileIn" accept=".json,application/json" multiple hidden>
+  <input type="file" id="importIn" accept=".json,application/json" hidden>
+
+  <script src="js/util.js"></script>
+  <script src="js/diff.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/panel.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+body {
+  font-family: "EB Garamond", serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f3cd8b;
+}
+.content-container {
+  max-width: 768px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.center-text {
+  text-align: center;
+}
+
+.sans-text {
+  font-family: "Tiro Devanagari Sanskrit", serif;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.8em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+  margin-top: 1.5em;
+}
+
+p {
+  font-size: 1.1em;
+  text-align: justify;
+}
+
+ul {
+  /* list-style-type: none; */
+  padding-left: 10px;
+  margin-left: 40px;
+}
+
+li a.index-book {
+  text-decoration: none;
+  color: #3a3a3a;
+}
+li a:hover {
+  /* background-color: #bdbdbd; */
+  text-decoration: underline;
+}
+
+a.disabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+}
+.intro-text {
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 2em;
+}
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #888;
+}
