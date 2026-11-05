@@ -142,7 +142,7 @@
 
     // When served over http from the repo root, load the converted edition automatically.
     if (/^https?:$/.test(location.protocol)) {
-      fetch('../dnyaneshwari_edition1.json')
+      fetch('../parsed_data/dnyaneshwari_edition1.json')
         .then((r) => (r.ok ? r.json() : Promise.reject()))
         .then((json) => { D.addEdition(json, 'dnyaneshwari_edition1.json'); afterLoad(); })
         .catch(() => { /* not available: user loads files manually */ });
