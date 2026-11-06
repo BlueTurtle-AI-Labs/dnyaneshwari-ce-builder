@@ -2,7 +2,7 @@
 """Convert the raw Dnyaneshwari chapter txt files into a single JSON file.
 
 Usage:
-    python scripts/txt_to_json.py raw_data/edition1-sansdocs -o dnyaneshwari_edition1.json
+    python scripts/txt_to_json.py raw_data/edition1-sansdocs -o dnyaneshwari_sansdocs.json
 
 Input files are expected to be named like adhyay01.txt ... adhyay18.txt.
 
@@ -164,7 +164,7 @@ def parse_chapter(path: Path, chapter_number: int, warnings: list):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("data_dir", type=Path, help="folder containing adhyayNN.txt files")
-    ap.add_argument("-o", "--output", type=Path, default=Path("dnyaneshwari_edition1.json"))
+    ap.add_argument("-o", "--output", type=Path, default=Path("dnyaneshwari_sansdocs.json"))
     args = ap.parse_args()
 
     files = []

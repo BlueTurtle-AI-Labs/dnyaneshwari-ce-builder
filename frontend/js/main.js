@@ -32,6 +32,12 @@
     if (list[j]) gotoChapter(list[j].num);
   }
 
+  // Editions fetched on startup, in column order (paths relative to the repo root).
+  const BUNDLED_EDITIONS = [
+    'parsed_data/sansdocs/dnyaneshwari_sansdocs.json',
+    'parsed_data/dandekar/dnyaneshwari_dandekar.json',
+  ];
+
   /* ---------- loading editions ---------- */
   function afterLoad() {
     const list = D.chapterList();
@@ -140,12 +146,18 @@
       D.toast(D.droppedLinks + ' saved link' + (D.droppedLinks === 1 ? '' : 's') + ' between two in-between points removed (not allowed)', true);
     }
 
-    // When served over http from the repo root, load the converted edition automatically.
+    // When served over http (repo root / GitHub Pages), load the bundled editions automatically.
     if (/^https?:$/.test(location.protocol)) {
-      fetch('../parsed_data/dnyaneshwari_edition1.json')
-        .then((r) => (r.ok ? r.json() : Promise.reject()))
-        .then((json) => { D.addEdition(json, 'dnyaneshwari_edition1.json'); afterLoad(); })
-        .catch(() => { /* not available: user loads files manually */ });
+      (async () => {
+        for (const path of BUNDLED_EDITIONS) {
+          try {
+            const r = await fetch('../' + path);
+            if (!r.ok) continue;
+            D.addEdition(await r.json(), path.split('/').pop());
+          } catch (e) { /* not available: user loads files manually */ }
+        }
+        afterLoad();
+      })();
     }
   }
 

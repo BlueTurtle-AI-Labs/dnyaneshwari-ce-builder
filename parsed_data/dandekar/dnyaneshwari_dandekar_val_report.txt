@@ -1,0 +1,218 @@
+VALIDATION REPORT for dnyaneshwari_dandekar.json
+==============================================================================
+Chapters: 18   Blocks: 9710   dn-verses: 9032
+Issues:   5 ERROR   2 WARNING   44 INFO
+
+By type:
+  ERROR   DN_NUM_BACKWARDS    1
+  ERROR   DN_NUM_GAP          1
+  ERROR   STRAY_CHARS         3
+  WARNING NO_EPILOGUE         1
+  WARNING PUNCT               1
+  INFO    BG_ADJACENT         18
+  INFO    DN_PARTS            3
+  INFO    DN_TOTAL            18
+  INFO    FIRST_BLOCK         5
+
+Errors+warnings per chapter: ch05:1, ch14:1, ch15:1, ch18:4
+
+==============================================================================
+CHAPTER 1   (raw file: adhyay01.txt)
+==============================================================================
+[INFO] BG_ADJACENT  block 01-0090
+    two Gita blocks in a row (no commentary between)
+    > पश्यैतां पाण्डुपुत्राणामाचार्य महतीं चमूम् | व्यूढां द्रुपदपुत्रेण तव शिष्येण धीमता ||३||
+[INFO] DN_TOTAL  block -
+    last ovi number 275, dn-verse blocks 275
+
+==============================================================================
+CHAPTER 2   (raw file: adhyay02.txt)
+==============================================================================
+[INFO] FIRST_BLOCK  block 02-0001
+    chapter starts with bg-verse, expected dn-verse
+[INFO] DN_TOTAL  block -
+    last ovi number 375, dn-verse blocks 375
+
+==============================================================================
+CHAPTER 3   (raw file: adhyay03.txt)
+==============================================================================
+[INFO] FIRST_BLOCK  block 03-0001
+    chapter starts with bg-verse, expected dn-verse
+[INFO] DN_TOTAL  block -
+    last ovi number 276, dn-verse blocks 276
+
+==============================================================================
+CHAPTER 4   (raw file: adhyay04.txt)
+==============================================================================
+[INFO] DN_PARTS  block 04-0149
+    5 segments (ovi usually has 4)
+    > दैवास्तव देहाचें पाळण| ऐसा निश्चयो परिपूर्ण| जो चिंतीना देहभरण| तो महायोगी जाण| दैवयोगें ||१२५||
+[INFO] DN_TOTAL  block -
+    last ovi number 225, dn-verse blocks 225
+
+==============================================================================
+CHAPTER 5   (raw file: adhyay05.txt)
+==============================================================================
+[INFO] FIRST_BLOCK  block 05-0001
+    chapter starts with bg-verse, expected dn-verse
+[ERROR] STRAY_CHARS  block 05-0008
+    unexpected characters '\ue0b5'(U+E0B5)
+    > जो परिणामींचा निर्वाळा| अचुंबितु ये फळा| आणि अनुष्ठितां प्रांजळा| सावियाचि ||७||
+[INFO] DN_TOTAL  block -
+    last ovi number 180, dn-verse blocks 180
+
+==============================================================================
+CHAPTER 6   (raw file: adhyay06.txt)
+==============================================================================
+[INFO] DN_TOTAL  block -
+    last ovi number 497, dn-verse blocks 497
+
+==============================================================================
+CHAPTER 7   (raw file: adhyay07.txt)
+==============================================================================
+[INFO] FIRST_BLOCK  block 07-0001
+    chapter starts with bg-verse, expected dn-verse
+[INFO] BG_ADJACENT  block 07-0040
+    two Gita blocks in a row (no commentary between)
+    > पुण्यो गन्धः पृथिव्यां च तेजश्चास्मि विभावसौ | जीवनं सर्वभूतेषु तपश्चास्मि तपस्विषु ||९||
+[INFO] BG_ADJACENT  block 07-0049
+    two Gita blocks in a row (no commentary between)
+    > बलं बलवतां चाहं कामरागविवर्जितम् | धर्माविरुद्धो भूतेषु कामोऽस्मि भरतर्षभ ||११||
+[INFO] BG_ADJACENT  block 07-0117
+    two Gita blocks in a row (no commentary between)
+    > चतुर्विधा भजन्ते मां जनाः सुकृतिनोऽर्जुन | आर्तो जिज्ञासुरर्थार्थी ज्ञानी च भरतर्षभ ||१६||
+[INFO] DN_TOTAL  block -
+    last ovi number 210, dn-verse blocks 210
+
+==============================================================================
+CHAPTER 8   (raw file: adhyay08.txt)
+==============================================================================
+[INFO] FIRST_BLOCK  block 08-0001
+    chapter starts with bg-verse, expected dn-verse
+[INFO] BG_ADJACENT  block 08-0138
+    two Gita blocks in a row (no commentary between)
+    > मामुपेत्य पुनर्जन्म दुःखालयमशाश्वतम् | नाप्नुवन्ति महात्मानः संसिद्धि परमां गताः ||१५||
+[INFO] BG_ADJACENT  block 08-0178
+    two Gita blocks in a row (no commentary between)
+    > भूतग्रामः स एवायं भूत्वा भूत्वा प्रलीयते | रात्र्यागमेऽवशः पार्थ प्रभवत्यहरागमे ||१९||
+[INFO] BG_ADJACENT  block 08-0200
+    two Gita blocks in a row (no commentary between)
+    > पुरुषः स परः पार्थ भक्त्या लभ्यस्त्वनन्यया | यस्यान्तःस्थानि भूतानि येन सर्वमिदं ततम् ||२२||
+[INFO] DN_TOTAL  block -
+    last ovi number 271, dn-verse blocks 271
+
+==============================================================================
+CHAPTER 9   (raw file: adhyay09.txt)
+==============================================================================
+[INFO] DN_TOTAL  block -
+    last ovi number 535, dn-verse blocks 535
+
+==============================================================================
+CHAPTER 10   (raw file: adhyay10.txt)
+==============================================================================
+[INFO] BG_ADJACENT  block 10-0087
+    two Gita blocks in a row (no commentary between)
+    > अहिंसा समता तुइष्टास्तपो दानं यशोऽयशः | भवन्ति भावा भूतानां मत्त एव पृथग्विधाः ||५||
+[INFO] BG_ADJACENT  block 10-0252
+    two Gita blocks in a row (no commentary between)
+    > महर्षीणां भृगुरहं गिरामस्म्येकमक्षरम् | यज्ञानां जपयज्ञोऽस्मि स्थावराणां हिमालयः ||२५||
+[INFO] BG_ADJACENT  block 10-0267
+    two Gita blocks in a row (no commentary between)
+    > अनन्तश्चास्मि नागानां वरुणो यादसामहम् | पितृणामर्यमा चास्मि यमः संयमतामहम् ||२९||
+[INFO] BG_ADJACENT  block 10-0290
+    two Gita blocks in a row (no commentary between)
+    > अक्षराणामकारोऽस्मि द्वन्द्वः सामासिकस्य च | अहमेवाक्षयः कालो धाताहं विश्वतोमुखः ||३३||
+[INFO] BG_ADJACENT  block 10-0337
+    two Gita blocks in a row (no commentary between)
+    > नान्तोऽस्ति मम दिव्यांना विभूतीनां परंतप | एष तूद्देशतः प्रोक्तो विभूतेर्विस्तरो मया ||४०||
+[INFO] DN_TOTAL  block -
+    last ovi number 335, dn-verse blocks 335
+
+==============================================================================
+CHAPTER 11   (raw file: adhyay11.txt)
+==============================================================================
+[INFO] DN_PARTS  block 11-0407
+    2 segments (ovi usually has 4)
+    > आतां एक वेळ वांचवीं जी प्राणें| या स्वरूपप्रळयापासोनि ||३८२||
+[INFO] BG_ADJACENT  block 11-0558
+    two Gita blocks in a row (no commentary between)
+    > नमः पुरस्तादथ पृष्ठतस्ते नमोऽस्तु ते सर्वत एव सर्व | अनन्तवीर्यामितविक्रमस्त्वं सर्वं समाप्नोषि ततोऽसि सर्वः ||४०||
+[INFO] DN_TOTAL  block -
+    last ovi number 708, dn-verse blocks 708
+
+==============================================================================
+CHAPTER 12   (raw file: adhyay12.txt)
+==============================================================================
+[INFO] DN_TOTAL  block -
+    last ovi number 247, dn-verse blocks 247
+
+==============================================================================
+CHAPTER 13   (raw file: adhyay13.txt)
+==============================================================================
+[INFO] DN_TOTAL  block -
+    last ovi number 1169, dn-verse blocks 1169
+
+==============================================================================
+CHAPTER 14   (raw file: adhyay14.txt)
+==============================================================================
+[WARNING] PUNCT  block 14-0041
+    stray '.' or '/' (likely marker typo)
+    > श्रीभगवानुवाच | परं भूयः प्रवक्ष्यामि ज्ञानाना.म् ज्ञानमुत्तमम् | यद्ज्ञात्वा मुनयः सर्वे परां सिद्धिमितो गताः ||१||
+[INFO] BG_ADJACENT  block 14-0205
+    two Gita blocks in a row (no commentary between)
+    > रजस्तमश्चाभिभूय सत्त्वं भवति भारत | रजः सत्त्वं तमश्चैव तमः सत्त्वं रजस्तथा ||१०||
+[INFO] BG_ADJACENT  block 14-0215
+    two Gita blocks in a row (no commentary between)
+    > लोभः प्रवृत्तिरारम्भः कर्मणामशमः स्पृहा | रजस्येतानि जायन्ते विवृद्धे भरतर्षभ ||१२||
+[INFO] BG_ADJACENT  block 14-0216
+    two Gita blocks in a row (no commentary between)
+    > अप्रकाशोऽप्रवृत्तिश्च प्रमादो मोह एव च | तमस्येतानि जायन्ते विवृद्धे कुरुनन्दन ||१३||
+[INFO] BG_ADJACENT  block 14-0217
+    two Gita blocks in a row (no commentary between)
+    > यदा सत्त्वे प्रवृद्धे तु प्रलयं याति देहभृत् | तदोत्तमविदां लोकानमलान् प्रतिपद्यते ||१४||
+[INFO] BG_ADJACENT  block 14-0218
+    two Gita blocks in a row (no commentary between)
+    > रजसि प्रलयं गत्वा कर्मसंगिषु जायते | तथा प्रलीनस्तमसि मूढयोनिषु जायते ||१५||
+[INFO] DN_TOTAL  block -
+    last ovi number 415, dn-verse blocks 415
+
+==============================================================================
+CHAPTER 15   (raw file: adhyay15.txt)
+==============================================================================
+[ERROR] DN_NUM_BACKWARDS  block 15-0524
+    verse number 508 after 508
+    > अजामेकां| अजा म्हणतां जन्म नाहीं| त्यासि नाशु कैचा कायी| यालागीं अक्षरु पाही| अज्ञानघन ||५०८||
+[INFO] DN_PARTS  block 15-0524
+    5 segments (ovi usually has 4)
+    > अजामेकां| अजा म्हणतां जन्म नाहीं| त्यासि नाशु कैचा कायी| यालागीं अक्षरु पाही| अज्ञानघन ||५०८||
+[INFO] DN_TOTAL  block -
+    last ovi number 598, dn-verse blocks 599
+
+==============================================================================
+CHAPTER 16   (raw file: adhyay16.txt)
+==============================================================================
+[INFO] DN_TOTAL  block -
+    last ovi number 473, dn-verse blocks 473
+
+==============================================================================
+CHAPTER 17   (raw file: adhyay17.txt)
+==============================================================================
+[INFO] DN_TOTAL  block -
+    last ovi number 433, dn-verse blocks 433
+
+==============================================================================
+CHAPTER 18   (raw file: adhyay18.txt)
+==============================================================================
+[ERROR] STRAY_CHARS  block 18-0385
+    unexpected characters '\ue0e6'(U+E0E6)
+    > तैसें हेतुकारणमेळें| उठी कर्म जें आंधळें| शास्त्राचे लाहे डोळे| तैं न्याय म्हणिपे ||३७०||
+[ERROR] STRAY_CHARS  block 18-0994
+    unexpected characters '\ue0e6'(U+E0E6)
+    > वरी थोडेंचि अमृत घेतां| सर्वस्व वेंचो कां पंडुसुता| जेणें जोडे जीविता| अक्षयत्व ||९४६||
+[ERROR] DN_NUM_GAP  block 18-1767
+    verse number jumps 1688 -> 1690 (missing 1)
+    > येथें जीवें जरी नाहाल| तरी हेंचि कीर होआल| नातरी पाठमिषें तिंबाल| जीभचि जरी ||१६९०||
+[WARNING] NO_EPILOGUE  block 18-1888
+    chapter 18 has no epilogue blocks
+[INFO] DN_TOTAL  block -
+    last ovi number 1810, dn-verse blocks 1809

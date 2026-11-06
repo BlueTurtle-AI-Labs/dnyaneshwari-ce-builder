@@ -1,4 +1,4 @@
-VALIDATION REPORT for dnyaneshwari_edition1.json
+VALIDATION REPORT for dnyaneshwari_sansdocs.json
 ==============================================================================
 Chapters: 18   Blocks: 9723   dn-verses: 9034
 Issues:   0 ERROR   4 WARNING   53 INFO

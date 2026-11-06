@@ -2,7 +2,7 @@
 """Validate the converted Dnyaneshwari JSON and write a human-readable report.
 
 Usage:
-    python scripts/validate_json.py dnyaneshwari_edition1.json \
+    python scripts/validate_json.py dnyaneshwari_sansdocs.json \
         --raw-dir raw_data/edition1-sansdocs
 Writes <json name>_val_report.txt next to the JSON (override with -o).
 
