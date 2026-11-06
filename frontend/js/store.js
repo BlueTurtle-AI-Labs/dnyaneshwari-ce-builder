@@ -16,6 +16,7 @@
     edMeta: {},        // edition id -> { name }   persisted
     stretch: {},       // 'edId|chapter' -> { blockId: px extra gap above that block }   persisted
     edOrder: [],       // persisted column order
+    showSim: false,    // show similarity scores on links   persisted
     selected: null,    // { type: 'link', id } | { type: 'block', ed, ch, block }
   });
 
@@ -41,6 +42,7 @@
       S.stretch = j.stretch || {};
       S.chapter = j.chapter || 1;
       S.edOrder = j.edOrder || [];
+      S.showSim = !!j.showSim;
     } catch (e) { /* ignore corrupt storage */ }
   }
   let saveTimer = null;
@@ -50,7 +52,7 @@
       try {
         const order = S.editions.map((e) => e.id).concat(S.edOrder.filter((id) => !S.editions.some((e) => e.id === id)));
         localStorage.setItem(KEY, JSON.stringify({
-          links: S.links.filter((l) => l.created !== 'auto'), edMeta: S.edMeta, stretch: S.stretch, chapter: S.chapter, edOrder: order,
+          links: S.links.filter((l) => l.created !== 'auto'), edMeta: S.edMeta, stretch: S.stretch, chapter: S.chapter, edOrder: order, showSim: S.showSim,
         }));
       } catch (e) { /* storage full / disabled */ }
     }, 150);

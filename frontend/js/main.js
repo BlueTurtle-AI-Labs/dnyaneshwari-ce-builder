@@ -108,6 +108,8 @@
 
     $('addEd').onclick = $('emptyAdd').onclick = () => $('fileIn').click();
     $('fileIn').onchange = (e) => { loadFiles([...e.target.files]); e.target.value = ''; };
+    $('showSim').checked = S.showSim;
+    $('showSim').onchange = (e) => { S.showSim = e.target.checked; D.emit(); };
     $('prevCh').onclick = () => stepChapter(-1);
     $('nextCh').onclick = () => stepChapter(1);
     $('chapterSel').onchange = (e) => gotoChapter(+e.target.value);

@@ -18,7 +18,7 @@ When served over http(s), `js/main.js` fetches the editions listed in `BUNDLED_E
 | Sansdocs | `parsed_data/sansdocs/dnyaneshwari_sansdocs.json` |
 | Dandekar | `parsed_data/dandekar/dnyaneshwari_dandekar.json` |
 
-**Links:** `parsed_data/links/sansdocs_dandekar_links.json` (made by `scripts/align_editions.py`) is imported on startup (`BUNDLED_LINKS`), so the two editions already come pre-linked: bg-verses and chapter-ends in order, ovis by text-similarity alignment (relation *Equivalent* if identical, *Variant reading* if the wording differs, *Uncertain* if weak). Ovis without a counterpart stay unlinked. They are ordinary links: edit or delete them freely. Auto links are not stored in the browser; edited ones are, and a deleted auto link reappears on the next page load.
+**Links:** `parsed_data/links/sansdocs_dandekar_links.json` (made by `scripts/align_editions.py`) is imported on startup (`BUNDLED_LINKS`), so the two editions already come pre-linked: bg-verses and chapter-ends in order, ovis by text-similarity alignment (relation *Equivalent* if identical, *Variant reading* if the wording differs, *Uncertain* if weak). Each link carries a `sim` score (0–1); tick **Similarity** in the toolbar to show it on the links (green ≥ 90%, amber ≥ 75%, red below). Ovis without a counterpart stay unlinked. They are ordinary links: edit or delete them freely. Auto links are not stored in the browser; edited ones are, and a deleted auto link reappears on the next page load.
 
 To bundle another edition, add its path to that list. The GitHub Pages workflow copies all of `parsed_data/` into the site. Any other edition JSON in the same layout can be loaded by hand at runtime.
 

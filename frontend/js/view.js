@@ -311,6 +311,16 @@
     });
   }
 
+  /* similarity badge on a link: green >= 90%, amber >= 75%, red below */
+  function simBadge(sim, x, y) {
+    const pct = Math.floor(sim * 100 + 1e-9);
+    const cls = sim >= 0.9 ? 'hi' : sim >= 0.75 ? 'mid' : 'lo';
+    const w = String(pct).length * 6.2 + 12;
+    return svg('g', { class: 'sim ' + cls, transform: `translate(${x},${y})` },
+      svg('rect', { x: -w / 2, y: -7, width: w, height: 14, rx: 7 }),
+      svg('text', { x: 0, y: 3.5, 'text-anchor': 'middle' }, pct + '%'));
+  }
+
   function renderLinks() {
     gLinks.textContent = '';
     counts = new Map();
@@ -335,7 +345,8 @@
         svg('path', { d, class: 'hit' }),
         svg('path', { d, class: 'line' }),
         svg('circle', { cx: A.x, cy: A.y, r: 5, class: 'end' }),
-        svg('circle', { cx: B.x, cy: B.y, r: 5, class: 'end' })));
+        svg('circle', { cx: B.x, cy: B.y, r: 5, class: 'end' }),
+        S.showSim && typeof lk.sim === 'number' ? simBadge(lk.sim, (A.x + B.x) / 2, (A.y + B.y) / 2) : null));
     }
     D.linkStats = { shown, hidden };
   }

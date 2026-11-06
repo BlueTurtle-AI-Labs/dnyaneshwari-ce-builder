@@ -12,6 +12,7 @@ Per chapter:
     (character-bigram Dice). Where the two chapters have the same number of ovis and every pair
     is similar this is simply 1:1; elsewhere the alignment skips the odd ovi and carries on with
     an offset. Ovis left without a partner are listed in the report.
+Each link carries "sim" (0-1, character-bigram Dice; 1 = identical) that the frontend can show.
 Link relation: equivalent (text identical after removing punctuation/number), variant
 (similar, wording differs), uncertain (weak match).
 The output is in the frontend's "Export links" format (loaded automatically on startup).
@@ -115,10 +116,11 @@ def main():
         if ch not in cb:
             continue
         def add(x, y, rel, sim=None):
+            if sim is None:   # identical after normalisation
+                sim = 1.0
             links.append({"id": f"auto-{ch:02d}-{x['block_id']}-{y['block_id']}",
                           "a": anchor(ida, ch, x["block_id"], "R"), "b": anchor(idb, ch, y["block_id"], "L"),
-                          "rel": rel, "note": "" if sim is None else f"auto-aligned, text similarity {sim:.2f}",
-                          "created": "auto"})
+                          "rel": rel, "sim": round(sim, 3), "note": "", "created": "auto"})
             stats[rel] += 1
 
         # Gita verses & chapter-end: in order
@@ -128,7 +130,8 @@ def main():
             if len(xs) != len(ys):
                 report.append(f"ch{ch}: {len(xs)} {kind} vs {len(ys)} - linked in order up to the shorter")
             for x, y in zip(xs, ys):
-                add(x, y, "equivalent")
+                s = dice(grams(x["block_text"]), grams(y["block_text"]))
+                add(x, y, "equivalent", s)
 
         xs = [b for b in ca["blocks"] if b["block_type"] == "dn-verse"]
         ys = [b for b in cb[ch]["blocks"] if b["block_type"] == "dn-verse"]
@@ -136,7 +139,7 @@ def main():
         used_a = {i for i, _, _ in pairs}; used_b = {j for _, j, _ in pairs}
         for i, j, s in pairs:
             same = norm(xs[i]["block_text"]) == norm(ys[j]["block_text"])
-            add(xs[i], ys[j], "equivalent" if same else ("variant" if s >= UNCERTAIN_BELOW else "uncertain"), None if same else s)
+            add(xs[i], ys[j], "equivalent" if same else ("variant" if s >= UNCERTAIN_BELOW else "uncertain"), 1.0 if same else s)
         # offsets: where does i - j change?
         offs, prev = [], None
         for i, j, _ in pairs:
