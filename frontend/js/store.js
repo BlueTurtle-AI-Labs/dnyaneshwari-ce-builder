@@ -50,7 +50,7 @@
       try {
         const order = S.editions.map((e) => e.id).concat(S.edOrder.filter((id) => !S.editions.some((e) => e.id === id)));
         localStorage.setItem(KEY, JSON.stringify({
-          links: S.links, edMeta: S.edMeta, stretch: S.stretch, chapter: S.chapter, edOrder: order,
+          links: S.links.filter((l) => l.created !== 'auto'), edMeta: S.edMeta, stretch: S.stretch, chapter: S.chapter, edOrder: order,
         }));
       } catch (e) { /* storage full / disabled */ }
     }, 150);

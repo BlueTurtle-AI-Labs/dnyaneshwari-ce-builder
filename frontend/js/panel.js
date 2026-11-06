@@ -39,7 +39,7 @@
     root.append(el('h3', {}, 'Link'));
 
     const sel = el('select', {
-      onchange: (e) => { lk.rel = e.target.value; D.emit(); },
+      onchange: (e) => { lk.rel = e.target.value; if (lk.created === 'auto') lk.created = 'edited'; D.emit(); },
     }, ...D.RELATIONS.map((r) => el('option', { value: r.key, selected: r.key === lk.rel, title: r.hint }, r.label)));
     root.append(el('div', { class: 'row' }, el('label', {}, 'Relation'), sel));
     const hint = D.RELATIONS.find((r) => r.key === lk.rel);
@@ -62,7 +62,7 @@
     root.append(el('h4', {}, 'Note'));
     const ta = el('textarea', { placeholder: 'Scholarly note about this mapping…' });
     ta.value = lk.note || '';
-    ta.addEventListener('input', () => { lk.note = ta.value; D.save(); });
+    ta.addEventListener('input', () => { lk.note = ta.value; if (lk.created === 'auto') lk.created = 'edited'; D.save(); });
     root.append(ta);
 
     root.append(el('div', { class: 'row', style: 'margin-top:14px' },

@@ -38,6 +38,11 @@
     'parsed_data/dandekar/dnyaneshwari_dandekar.json',
   ];
 
+  // Link maps (same format as "Export links") imported on startup; ids are stable, so no duplicates.
+  const BUNDLED_LINKS = [
+    'parsed_data/links/sansdocs_dandekar_links.json',
+  ];
+
   /* ---------- loading editions ---------- */
   function afterLoad() {
     const list = D.chapterList();
@@ -155,6 +160,12 @@
             if (!r.ok) continue;
             D.addEdition(await r.json(), path.split('/').pop());
           } catch (e) { /* not available: user loads files manually */ }
+        }
+        for (const path of BUNDLED_LINKS) {
+          try {
+            const r = await fetch('../' + path);
+            if (r.ok) D.importLinks(await r.text());
+          } catch (e) { /* optional */ }
         }
         afterLoad();
       })();

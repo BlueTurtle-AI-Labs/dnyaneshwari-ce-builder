@@ -45,6 +45,8 @@ python -X utf8 scripts/dandekar_csv_to_json.py parsed_data/dandekar/dandekar_ovi
 python -X utf8 scripts/validate_json.py parsed_data/dandekar/dnyaneshwari_dandekar.json
 ```
 
+**Linking two editions** — `python -X utf8 scripts/align_editions.py <editionA.json> <editionB.json> -o parsed_data/links/sansdocs_dandekar_links.json` aligns the ovis per chapter by text similarity (1:1 where the chapters agree, skipping the odd ovi and continuing with an offset elsewhere) and writes a link map the frontend loads automatically. A `.report.txt` beside it lists the offset changes and unmatched ovis per chapter.
+
 `shree_dev_decode.py` is the glyph→Unicode decoder used by step 1.
 
 ### Known issues in the Dandekar JSON
